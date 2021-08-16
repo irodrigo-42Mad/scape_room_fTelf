@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Introduce palabra</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form action="check()" target="" method="get" name="formScapeRoom">
+        <label for="palabra">Introduce palabra:</label>
+        <input type="text" name="palabra" value="" size="100">
+        <input type="submit" name="enviar" value="comprobar palabra"/>
+    </form>
+    <script type="JavaScript">
+        
+        let d = new Date();
+        document.body.innerHTML = "<h1>Time right now is:  " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+        "</h1>"
+
+        function check()
+        {
+            if strcmp(palabra.value, palabras[0] == 0)
+            {
+                window.open('http://seleccion.html', '_self');
+            }
+            else
+            {
+                alert("La palabra no es correcta, intentadlo de nuevo");
+                /* en este momento debemos colocar los elementos en el caso de
+                ** no tener correctamente colocada la palabra, debemos quitar
+                ** tiempo y poner un timer que no nos permita hacer retry en x seg
+                ** en este momento, el sistema quedará mostrando una página que
+                ** volverá a dejar introducir valores en el formulario pasados los
+                ** segundos del retry
+                */
+                palabra.value = "";
+
+
+            }    
+        }
+
+        function strcmp(a, b) {
+            if (a.toString() < b.toString()) return -1;
+            if (a.toString() > b.toString()) return 1;
+            return 0;
+        }
+    </script>
+
+</body>
+
+</html>
